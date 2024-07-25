@@ -1,24 +1,15 @@
-#© 2024 MaJunYoung akwns615@gmail.com v8 24.07.24
+#© 2024 MaJunYoung akwns615@gmail.com v9 24.07.24
 import subprocess, re, sys
 print("☆ SK C&C Security Team - Cipher Checker 2024 WITH sslyze ☆")
 
-secures = ["TLS_ECCPWD_WITH_AES_128_CCM_SHA256",
-            "TLS_ECCPWD_WITH_AES_256_CCM_SHA384",
-            "TLS_ECDHE_ECDSA_WITH_AES_128_CCM",
-            "TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8",
-            "TLS_ECDHE_ECDSA_WITH_AES_256_CCM",
-            "TLS_ECDHE_ECDSA_WITH_AES_256_CCM_8",
-            "TLS_ECDHE_PSK_WITH_AES_128_CCM_8_SHA256",
-            "TLS_ECDHE_PSK_WITH_AES_128_CCM_SHA256",
-            "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
-            "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
-            "TLS_ECDHE_RSA_WITH_ARIA_128_GCM_SHA256",
-            "TLS_ECDHE_RSA_WITH_ARIA_256_GCM_SHA384",
-            "TLS_ECDHE_RSA_WITH_CAMELLIA_128_GCM_SHA256",
-            "TLS_ECDHE_RSA_WITH_CAMELLIA_256_GCM_SHA384",
-            "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
-            "TLS_AES_128_CCM_8_SHA256",
-            "TLS_AES_128_CCM_SHA256",]
+def read_file_to_list(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        lines = file.readlines()
+    # 줄바꿈 문자를 제거하고 리스트에 저장
+    lines = [line.strip() for line in lines]
+    return lines
+
+secures = read_file_to_list('cipher.txt')
 
 def main():
     if len(sys.argv) < 2:
@@ -53,6 +44,7 @@ def run_exe(_list):
                             print("     [WEAK]  ", a[index+j])
                     else:
                         print(a[index+j])
+                print("")
             else:
                 print(a[index])
                 print(a[index+1],"\n")
