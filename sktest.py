@@ -21,7 +21,7 @@ def main():
 
 
 def run_exe(_list):
-    command = ['sslyze.exe']
+    command = ['./data/sslyze.exe']
     command = command + _list
     text1 = "SCAN RESULTS FOR " + command[1]
     print("-"*len(text1))
