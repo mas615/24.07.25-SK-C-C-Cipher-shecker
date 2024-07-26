@@ -9,7 +9,7 @@ def read_file_to_list(file_path):
     lines = [line.strip() for line in lines]
     return lines
 
-secures = read_file_to_list('cipher.txt')
+secures = read_file_to_list('cipher.js')
 
 def main():
     if len(sys.argv) < 2:

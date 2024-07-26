@@ -6,6 +6,6 @@ def read_file_to_list(file_path):
     return lines
 
 # 예시 사용법
-file_path = 'cipher.txt'  # 여기에 파일 경로를 입력하세요
+file_path = 'cipher.js'  # 여기에 파일 경로를 입력하세요
 lines_list = read_file_to_list(file_path)
 print(lines_list)
