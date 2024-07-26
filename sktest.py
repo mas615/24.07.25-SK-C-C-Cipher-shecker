@@ -1,4 +1,4 @@
-#© 2024 MaJunYoung akwns615@gmail.com v9 24.07.24
+#© 2024 MaJunYoung akwns615@gmail.com v10 24.07.26
 import subprocess, re, sys
 print("☆ SK C&C Security Team - Cipher Checker 2024 WITH sslyze ☆")
 
