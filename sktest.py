@@ -37,7 +37,7 @@ def run_exe(_list):
     output = result.stdout
     a = output.split("\n")
     for index, i in enumerate(a):
-        if "* TLS 1.1 Cipher Suites:" in i or "* TLS 1.2 Cipher Suites:" in i or "* TLS 1.3 Cipher Suites:" in i:
+        if "* TLS 1.0 Cipher Suites:" in i or "* TLS 1.1 Cipher Suites:" in i or "* TLS 1.2 Cipher Suites:" in i or "* TLS 1.3 Cipher Suites:" in i:
             if "The server accepted the following" in a[index+3]:
                 count = re.search(r'\d+', a[index+3])
                 howmany = int(count.group())
